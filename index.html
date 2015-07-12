@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>BigGym</title>
+<link rel="stylesheet" media="all" href="/assets/application-e00a9d01ef2f687d7dbf23ac0e094ad1.css" />
+<script src="/assets/application-b4b9c57559e43dd10bbf06cdb864ea7e.js"></script>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="PpK/O3v9GvJkbX8fobsd9zftkW0j4VWUEtqzjOrcvCL+igudbrvmAYswCiim534Vpv9LnbC7u8CpssX9iShsiw==" />
+</head>
+<body ng-app='bigGym'>
+<div class='container'>
+<nav class='navbar navbar-inverse'>
+<div class='navbar-header'>
+<button class='navbar-toggle' data-target='#topNavbar' data-toggle='collapse' type='button'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<a class='navbar-brand' href='#/' title='Big Gym'>Big Gym</a>
+</div>
+<div class='collapse navbar-collapse' id='topNavbar'>
+<ul class='nav navbar-nav'>
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown'>
+Our Gym
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu'>
+<li>
+<a href='#/bio'>Phylosophy and History</a>
+</li>
+<li>
+<a href='#/spaces'>Spaces</a>
+</li>
+<li>
+<a href='#/equipment'>Our Equipment</a>
+</li>
+</ul>
+</li>
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown'>
+Courses
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu'>
+<li>
+<a href='#/courses'>All Courses</a>
+</li>
+<li>
+<a href='#/categories'>Categories</a>
+</li>
+</ul>
+</li>
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown'>
+Instructors
+<span class='caret'></span>
+</a>
+<ul class='dropdown-menu'>
+<li>
+<a href='#/instructors'>All Instructors</a>
+</li>
+<li>
+<a href='#/instructors_of_the_month'>Of this month</a>
+</li>
+</ul>
+</li>
+<li>
+<a href='#/rooms'>Rooms</a>
+</li>
+</ul>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<a href='#/fees_and_registration'>FEEs and registration</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+
+<div class='container' id='error' ng-if='error.show' ng-switch on='error'>
+<div class='alert alert-dismissible' ng-class="'alert-' + error.level" role='alert'>
+<button aria-label='Close' class='close' ng-click='error.show=false' type='button'>
+<span aria-hidden='true'>&times;</span>
+</button>
+<h5>{{ error.title }}</h5>
+<p>
+{{ error.description }}
+Please get back to
+<a href='#/'>Home</a>
+.
+{{ error.foot }}
+</p>
+</div>
+</div>
+
+<div cg-busy='req'>
+<ng-view></ng-view>
+</div>
+
+<footer class='footer'>
+<div class='container'>
+<ul class='nav nav-pills nav-justified hidden-xs'>
+<li role='presentation'>
+<a href='#/schedule' title='Overall Schedule'>Overall schedule</a>
+</li>
+<li role='presentation'>
+<a href='#/testimonials' title='Testimonials'>Testimonials</a>
+</li>
+<li role='presentation'>
+<a href='#/where_and_contacts' title='Where and Contacts'>Where & Contacts</a>
+</li>
+</ul>
+<ul class='nav nav-pills visible-xs'>
+<li role='presentation'>
+<a href='#/schedule' title='Overall Schedule'>
+<span aria-hidden='true' class='glyphicon glyphicon-time x2'></span>
+</a>
+</li>
+<li role='presentation'>
+<a href='#/testimonials' title='Testimonials'>
+<span aria-hidden='true' class='glyphicon glyphicon-bullhorn x2'></span>
+</a>
+</li>
+<li role='presentation'>
+<a href='#/where_and_contacts' title='Where and Contacts'>
+<span aria-hidden='true' class='glyphicon glyphicon-map-marker x2'></span>
+</a>
+</li>
+</ul>
+</div>
+<div class='container'>
+<div class='text-muted text-center'>
+Copyright (C) Big Gym - 1.000.000 USD $ - Tel: 666.666.666 - Address: T&auml;htikuja 1, FI-96930 Napapiiri
+</div>
+</div>
+</footer>
+
+</body>
+</html>
