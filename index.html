@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
 <title>BigGym</title>
-<link rel="stylesheet" media="all" href="assets/application-e00a9d01ef2f687d7dbf23ac0e094ad1.css" />
-<script src="assets/application-b4b9c57559e43dd10bbf06cdb864ea7e.js"></script>
+<link rel="stylesheet" media="all" href="assets/application-a86128766b086929c667f1e981e739ad.css" />
+<script>
+//<![CDATA[
+API_SERVER = 'http://vps57015.ovh.net:3000';
+//]]>
+</script>
+<script src="assets/application-e3e3b4c5454058129e65ed513e43e48e.js"></script>
 </head>
 <body ng-app='bigGym'>
 <div class='container'>
@@ -25,13 +29,13 @@ Our Gym
 <span class='caret'></span>
 </a>
 <ul class='dropdown-menu'>
-<li>
+<li data-target='#topNavbar.in' data-toggle='collapse'>
 <a href='#/bio'>Phylosophy and History</a>
 </li>
-<li>
+<li data-target='#topNavbar.in' data-toggle='collapse'>
 <a href='#/spaces'>Spaces</a>
 </li>
-<li>
+<li data-target='#topNavbar.in' data-toggle='collapse'>
 <a href='#/equipment'>Our Equipment</a>
 </li>
 </ul>
@@ -42,10 +46,10 @@ Courses
 <span class='caret'></span>
 </a>
 <ul class='dropdown-menu'>
-<li>
+<li data-target='#topNavbar.in' data-toggle='collapse'>
 <a href='#/courses'>All Courses</a>
 </li>
-<li>
+<li data-target='#topNavbar.in' data-toggle='collapse'>
 <a href='#/categories'>Categories</a>
 </li>
 </ul>
@@ -56,25 +60,38 @@ Instructors
 <span class='caret'></span>
 </a>
 <ul class='dropdown-menu'>
-<li>
+<li data-target='#topNavbar.in' data-toggle='collapse'>
 <a href='#/instructors'>All Instructors</a>
 </li>
-<li>
+<li data-target='#topNavbar.in' data-toggle='collapse'>
 <a href='#/instructors_of_the_month'>Of this month</a>
 </li>
 </ul>
 </li>
-<li>
+<li data-target='#topNavbar.in' data-toggle='collapse'>
 <a href='#/rooms'>Rooms</a>
 </li>
 </ul>
 <ul class='nav navbar-nav navbar-right'>
-<li>
+<li data-target='#topNavbar.in' data-toggle='collapse'>
 <a href='#/fees_and_registration'>FEEs and registration</a>
 </li>
 </ul>
 </div>
 </nav>
+</div>
+
+<div class='container'>
+<ol class='breadcrumb' ng-controller='BreadcrumbsController'>
+<li ng-class='{ active: $last }' ng-repeat='b in breadcrumbs.get() track by b.path'>
+<a class='margin-right-xs' ng-href='#{{ b.path }}' ng-if='!$last'>
+{{ b.label }}
+</a>
+<span ng-if='$last'>
+{{ b.label }}
+</span>
+</li>
+</ol>
 </div>
 
 <div class='container' id='error' ng-if='error.show' ng-switch on='error'>
