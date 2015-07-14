@@ -6,7 +6,7 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>BigBym</name>
+    <name>BigGym</name>
 
     <description>
         The BigGym mobile App
